@@ -444,9 +444,13 @@ impl<'t> Verifier<'t> {
         // Create a `TranscriptRng` from the transcript. The verifier
         // has no witness data to commit, so this just mixes external
         // randomness into the existing transcript.
-        use rand::thread_rng;
-        let mut rng = self.transcript.build_rng().finalize(&mut thread_rng());
-        let r = Scalar::random(&mut rng);
+//         use rand::thread_rng;
+//         let mut rng = self.transcript.build_rng().finalize(&mut thread_rng());
+//         let r = Scalar::random(&mut rng);
+        
+        use rand::{Rng, SeedableRng, rngs::StdRng};
+    let mut rng = StdRng::seed_from_u64(87);
+    let r = Scalar::random(&mut rng);
 
         let xx = x * x;
         let rxx = r * xx;
