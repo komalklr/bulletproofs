@@ -358,7 +358,7 @@ impl<'t> Verifier<'t> {
         use crate::inner_product_proof::inner_product;
         use crate::util;
         use std::iter;
-
+        println!("bpgen_length:{}",padded_n);
         if bp_gens.gens_capacity < padded_n {
             return Err(R1CSError::InvalidGeneratorsLength);
         }
@@ -448,9 +448,10 @@ impl<'t> Verifier<'t> {
 //         let mut rng = self.transcript.build_rng().finalize(&mut thread_rng());
 //         let r = Scalar::random(&mut rng);
         
-        use rand::{Rng, SeedableRng, rngs::StdRng};
-    let mut rng = StdRng::seed_from_u64(87);
-    let r = Scalar::random(&mut rng);
+//         use rand::{Rng, SeedableRng, rngs::StdRng};
+//     let mut rng = StdRng::seed_from_u64(87);
+//     let r = Scalar::random(&mut rng);
+        let r = Scalar::from_u64(45);
 
         let xx = x * x;
         let rxx = r * xx;
