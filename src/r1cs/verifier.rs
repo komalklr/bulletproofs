@@ -358,7 +358,7 @@ impl<'t> Verifier<'t> {
         use crate::inner_product_proof::inner_product;
         use crate::util;
         use std::iter;
-        println!("bpgen_length:{}",padded_n);
+        //println!("bpgen_length:{}",padded_n);
         if bp_gens.gens_capacity < padded_n {
             return Err(R1CSError::InvalidGeneratorsLength);
         }
