@@ -451,7 +451,7 @@ impl<'t> Verifier<'t> {
 //         use rand::{Rng, SeedableRng, rngs::StdRng};
 //     let mut rng = StdRng::seed_from_u64(87);
 //     let r = Scalar::random(&mut rng);
-        let r = Scalar::from_u64(45u64);
+        let r = Scalar::from(45u64);
 
         let xx = x * x;
         let rxx = r * xx;
