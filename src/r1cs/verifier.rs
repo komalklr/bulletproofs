@@ -332,6 +332,7 @@ impl<'t> Verifier<'t> {
         pc_gens: &PedersenGens,
         bp_gens: &BulletproofGens,
     ) -> Result<(), R1CSError> {
+        println!("vvvvv1");
         // Commit a length _suffix_ for the number of high-level variables.
         // We cannot do this in advance because user can commit variables one-by-one,
         // but this suffix provides safe disambiguation because each variable
