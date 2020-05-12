@@ -496,7 +496,7 @@ impl<'t> Verifier<'t> {
         .ok_or_else(|| R1CSError::VerificationError)?;
 
         use curve25519_dalek::traits::IsIdentity;
-
+        println!("vvvvvvv4");
         if !mega_check.is_identity() {
             return Err(R1CSError::VerificationError);
         }
