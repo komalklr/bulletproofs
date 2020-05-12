@@ -360,7 +360,7 @@ impl<'t> Verifier<'t> {
         use std::iter;
         //println!("bpgen_length:{}",padded_n);
         if bp_gens.gens_capacity < padded_n {
-            return Err(R1CSError::InvalidGeneratorsLength);
+            //return Err(R1CSError::InvalidGeneratorsLength);
         }
         // We are performing a single-party circuit proof, so party index is 0.
         let gens = bp_gens.share(0);
