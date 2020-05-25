@@ -332,7 +332,7 @@ impl<'t> Verifier<'t> {
         pc_gens: &PedersenGens,
         bp_gens: &BulletproofGens,
     ) -> Result<(), R1CSError> {
-        println!("vvvvv1");
+       // println!("vvvvv1");
         // Commit a length _suffix_ for the number of high-level variables.
         // We cannot do this in advance because user can commit variables one-by-one,
         // but this suffix provides safe disambiguation because each variable
@@ -497,7 +497,7 @@ impl<'t> Verifier<'t> {
         .ok_or_else(|| R1CSError::VerificationError)?;
 
         use curve25519_dalek::traits::IsIdentity;
-        println!("vvvvvvv4");
+       // println!("vvvvvvv4");
         if !mega_check.is_identity() {
             return Err(R1CSError::VerificationError);
         }
